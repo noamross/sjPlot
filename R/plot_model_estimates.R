@@ -141,9 +141,6 @@ plot_model_estimates <- function(model,
   # sort estimates by effect size
 
   if (isTRUE(sort.est)) {
-    if (!is.null(group.terms))
-      dat$term <- forcats::fct_reorder(dat$term, dat$group)
-    else
       dat$term <- forcats::fct_reorder(dat$term, dat$estimate)
   } else {
     dat$term <- forcats::fct_rev(dat$term)
